@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetpidev.FXMLRegisterController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="3.0" prefHeight="600.0" prefWidth="1034.0">
+         <children>
+            <Line endX="60.0" fill="#8c8c8c" layoutX="462.0" layoutY="292.0" opacity="0.5" rotate="90.0" startX="5.0" strokeWidth="1.25">
+               <effect>
+                  <Blend opacity="0.0" />
+               </effect>
+            </Line>
+            <Text layoutX="269.0" layoutY="95.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Inscrivez-vous à l'application HuntKingdom" wrappingWidth="591.31640625">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Text>
+            <Line endX="1024.0" fill="#005a19" layoutX="15.0" layoutY="190.0" opacity="0.2" startX="-5.0" stroke="#005a19" strokeWidth="1.25">
+               <effect>
+                  <Blend opacity="0.0" />
+               </effect>
+            </Line>
+            <Text fill="RED" layoutX="659.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+            <Text fill="RED" layoutX="661.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+            <Label layoutX="610.0" layoutY="329.0" text="Role :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="610.0" layoutY="253.0" prefHeight="20.0" prefWidth="64.0" text="Email :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="email" layoutX="683.0" layoutY="248.0" prefHeight="26.0" prefWidth="234.0" style="-fx-border-color: #00000;" />
+            <Line endX="1024.0" fill="#005a19" layoutX="15.0" layoutY="474.0" opacity="0.2" startX="-5.0" stroke="#005a19" strokeWidth="1.25">
+               <effect>
+                  <Blend opacity="0.0" />
+               </effect>
+            </Line>
+            <Text fill="#353535" layoutX="453.0" layoutY="521.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="En s'inscrivant vous acceptez les termes et règles d'utilistation">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Text>
+            <Text layoutX="453.0" layoutY="535.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous pouvez les consulter sur le site Web" wrappingWidth="287.5517578125">
+               <font>
+                  <Font name="Helvetica Neue" size="9.0" />
+               </font>
+            </Text>
+            <Text fill="#0e7ef4" layoutX="375.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L'équipe Pidev :">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="password" layoutX="155.0" layoutY="327.0" prefHeight="25.0" prefWidth="234.0" />
+            <TextField fx:id="username" layoutX="154.0" layoutY="248.0" prefHeight="26.0" prefWidth="234.0" style="-fx-border-color: #00000;" />
+            <Label layoutX="58.0" layoutY="253.0" text="Username :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="329.0" text="Password :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Text fill="RED" layoutX="132.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+            <Text fill="RED" layoutX="130.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+            <ChoiceBox fx:id="roles" layoutX="733.0" layoutY="325.0" prefHeight="25.0" prefWidth="127.0" />
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="28.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Sans%20titre-1.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="473.0" layoutY="423.0" mnemonicParsing="false" onAction="#register" text="S'inscrire " />
+            <Text fill="#006aff" layoutX="547.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+            <Text fill="#006aff" layoutX="363.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1034.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetpidev.FXMLLoginController">
+   <children>
+      <Line endX="60.0" fill="#8c8c8c" layoutX="395.0" layoutY="292.0" opacity="0.5" rotate="90.0" startX="5.0" strokeWidth="1.25">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <Text layoutX="322.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pas encore inscrit ? " />
+      <Text layoutX="252.0" layoutY="94.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Connectez-vous à votre compte HuntKingdom" wrappingWidth="591.31640625">
+         <font>
+            <Font name="Agency FB" size="32.0" />
+         </font>
+      </Text>
+      <Line endX="1024.0" fill="#005a19" layoutX="15.0" layoutY="190.0" opacity="0.2" startX="-5.0" stroke="#005a19" strokeWidth="1.25">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <Line endX="60.0" fill="#8c8c8c" layoutX="395.0" layoutY="386.0" opacity="0.5" rotate="90.0" startX="5.0" strokeWidth="1.25">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <Text fill="RED" layoutX="525.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="RED" layoutX="527.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Label layoutX="457.0" layoutY="332.0" text="Password :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="453.0" layoutY="256.0" text="Username :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="549.0" layoutY="251.0" prefHeight="26.0" prefWidth="397.0" style="-fx-border-color: #00000;" />
+      <Line endX="1024.0" fill="#005a19" layoutX="15.0" layoutY="474.0" opacity="0.2" startX="-5.0" stroke="#005a19" strokeWidth="1.25">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="138.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Sans%20titre-1.png" />
+         </image></ImageView>
+      <Text fill="#8c8c8c" layoutX="164.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" sans votre autorisation.">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text fill="#8c8c8c" layoutX="70.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note : L'équipe Pingwin ne publiera jamais aucune information sur vos réseaux">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <Text fill="#353535" layoutX="665.0" layoutY="522.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="de Pingwin permet au amateurs et aux professionnels">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <Text layoutX="593.0" layoutY="534.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="de se regrouper et partager leur passion ." wrappingWidth="287.5517578125">
+         <font>
+            <Font name="Helvetica Neue" size="9.0" />
+         </font>
+      </Text>
+      <Text fill="#0e7ef4" layoutX="587.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L'équipe Pidev">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Button fx:id="register" layoutX="507.0" layoutY="110.0" mnemonicParsing="false" onAction="#redirect" prefHeight="25.0" prefWidth="105.0" text="S'inscrire ici" />
+      <Button fx:id="login" layoutX="693.0" layoutY="374.0" mnemonicParsing="false" onAction="#login" text="Se Connecter" />
+      <PasswordField fx:id="password" layoutX="550.0" layoutY="330.0" prefHeight="25.0" prefWidth="397.0" />
+   </children>
+</AnchorPane>

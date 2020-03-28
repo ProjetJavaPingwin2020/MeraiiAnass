@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetpidev.Add_evenementController">
+   <children>
+      <BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="768.0" prefWidth="201.0" style="-fx-background-color: #9bd069;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Evénement" textAlignment="CENTER" wrappingWidth="199.380859375">
+                     <font>
+                        <Font name="Quicksand Medium" size="29.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER_LEFT" prefWidth="140.0" style="-fx-background-color: #82bf40;">
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <TextField disable="true" editable="false" prefHeight="25.0" prefWidth="98.0" promptText="rechchercher" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-font-size: 16px;" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="100.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="186.0" style="-fx-background-color: #82bf40;">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#button1" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #446414; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="PLUS" />
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Créer un evénement" wrappingWidth="155.4404296875">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="186.0" style="-fx-background-color: #82bf40;">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#button2" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #6fa131; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="COG" />
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Gérer vos evénements" wrappingWidth="155.4404296875">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="186.0" style="-fx-background-color: #82bf40;">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#button3" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #6fa131; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="LIST" />
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Consulter tous les evénements" wrappingWidth="155.4404296875">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="186.0" style="-fx-background-color: #82bf40;">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#button4" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #6fa131; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" />
+                           </graphic>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Mes participations" wrappingWidth="155.4404296875">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="408.0" prefHeight="62.0" prefWidth="186.0" style="-fx-background-color: #82bf40;">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#backToMenu" prefHeight="35.0" prefWidth="192.0" style="-fx-background-color: #6fa131; -fx-text-fill: white;" text="retour au menu" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="BACKWARD" size="1.3em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="200.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24px; -fx-fill: #9bd069;" />
+                        <Label fx:id="Lhello" prefHeight="31.0" prefWidth="193.0" textFill="#82bf40">
+                           <HBox.margin>
+                              <Insets left="500.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="parent" prefHeight="630.0" prefWidth="824.0">
+                     <children>
+                        <AnchorPane layoutX="-14.0" layoutY="21.0" prefHeight="647.0" prefWidth="824.0" scaleY="1.13">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="140.0" layoutY="105.0" opacity="0.89" prefHeight="455.0" prefWidth="446.0" style="-fx-background-color: #fff; -fx-border-radius: 50px;">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="Lasso" prefHeight="27.0" prefWidth="180.0" text="Nom de l'evénement :" textFill="#281212">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="TFnom" prefHeight="44.0" prefWidth="219.0" promptText="Donner un nom créatif !" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <JFXComboBox fx:id="CBgovernorat" focusColor="#6fa131" onAction="#onAdressConfirmed" prefHeight="43.0" prefWidth="211.0" promptText="Governorat" unFocusColor="#281212" />
+                                          <JFXComboBox fx:id="CBvile" focusColor="#6fa131" prefHeight="42.0" prefWidth="197.0" promptText="ville" />
+                                          <TextField fx:id="TFrue" prefHeight="44.0" prefWidth="184.0" promptText="rue" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label prefHeight="27.0" prefWidth="180.0" text="Description :" textFill="#281212">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="TFcap" prefHeight="62.0" prefWidth="187.0" promptText="votre description" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label prefHeight="59.0" prefWidth="222.0" text="        Date">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="datepicker" prefHeight="50.0" prefWidth="185.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="75.0" prefWidth="446.0">
+                                       <children>
+                                          <Label prefHeight="44.0" prefWidth="226.0" text="        Heure">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTimePicker fx:id="heure" prefHeight="31.0" prefWidth="180.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="73.0" prefWidth="435.0">
+                                       <children>
+                                          <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="227.0" text="Choisir une image :" textFill="#281212">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets left="25.0" />
+                                             </padding>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#Parcourir" prefHeight="45.0" prefWidth="153.0" style="-fx-background-color: #6fa131; -fx-background-radius: 0px; -fx-padding: 10px; -fx-text-fill: white; -fx-font-size: 16px;" text="Parcourir" />
+                                          <TextArea fx:id="TApath" editable="false" prefHeight="71.0" prefWidth="212.0" promptText="chemin d'image" wrapText="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="60.0" prefWidth="446.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#onCreerClicked" prefHeight="54.0" prefWidth="173.0" style="-fx-background-color: #6fa131; -fx-background-radius: 0px; -fx-padding: 10px; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Créer !">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <ImageView fx:id="IVimage" fitHeight="168.0" fitWidth="219.0" layoutX="586.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true" scaleY="1.13" />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+               </children>
+            </VBox>
+         </center>
+         <effect>
+            <DropShadow />
+         </effect>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>
