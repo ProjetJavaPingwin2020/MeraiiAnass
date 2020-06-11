@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.MesReservationsController">
+   <children>
+      <AnchorPane fx:id="parent" prefHeight="622.0" prefWidth="1020.0">
+         <children>
+            <ListView fx:id="list" layoutX="281.0" layoutY="189.0" onMouseClicked="#select" opacity="0.76" prefHeight="323.0" prefWidth="702.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ListView>
+             <HBox layoutX="14.0" layoutY="145.0" prefHeight="50.0" prefWidth="214.0" style="-fx-background-color: #e0e0d1;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Pane opacity="0.8" prefHeight="59.0" prefWidth="92.0" style="-fx-background-color: #8cb02c;">
+               <children>
+                  <Text fill="WHITE" layoutX="12.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue" wrappingWidth="68.02880859375">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="124.0">
+               <children>
+                  <Text fx:id="username" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="110.13671875">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="284.0" opacity="0.8" prefHeight="50.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+               <children>
+                  <Button fx:id="mesres" mnemonicParsing="false" onAction="#sms" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <graphic>
+                                    <FontAwesomeIcon fill="WHITE" />
+                                 </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Donner un Avis" wrappingWidth="155.4404296875">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="216.0" opacity="0.8" prefHeight="54.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+               <children>
+                  <Button fx:id="listeformations" mnemonicParsing="false" onAction="#listeformations" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                      <graphic>
+                                <FontAwesomeIcon fill="WHITE" iconName="LIST" />
+                            </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Liste des formations" wrappingWidth="186.4404296875">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="351.0" opacity="0.8" prefHeight="50.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+               <children>
+                  <Button fx:id="mescadeaux" mnemonicParsing="false" onAction="#mescadeaux" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                       <graphic>
+                                    <FontAwesomeIcon fill="WHITE" iconName="GIFT" />
+                                 </graphic>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Mes Cadeaux" wrappingWidth="155.4404296875">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="pane4" prefHeight="146.0" prefWidth="1020.0">
+         <children>
+            <Label fx:id="Lhello" layoutX="71.0" layoutY="15.0" prefHeight="31.0" prefWidth="193.0" textFill="#82bf40" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane3" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane2" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane11" prefHeight="146.0" prefWidth="1020.0" />
+      <Button fx:id="FormationsBtn" layoutX="591.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionformation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Formations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="BoutiqueBtn" layoutX="73.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionBoutique" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="InformationsBtn" layoutX="751.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionInformation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Informations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="EvenementsBtn" layoutX="424.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionEvent" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Evénéments" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="EspecesBtn" layoutX="244.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionEspece" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Espèces" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="Ltest" layoutX="662.0" layoutY="491.0" prefHeight="60.0" prefWidth="173.0" visible="false">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logout" fitHeight="39.0" fitWidth="33.0" layoutX="960.0" layoutY="59.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/deconnexion.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="panier" fitHeight="39.0" fitWidth="43.0" layoutX="900.0" layoutY="59.0" onMouseClicked="#panier" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/panier.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

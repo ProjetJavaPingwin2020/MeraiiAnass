@@ -20,6 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import Services.*;
 import com.jfoenix.controls.JFXTimePicker;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -42,6 +43,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.StageStyle;
+import rest.file.uploader.tn.FileUploader;
 
 /**
  * FXML Controller class
@@ -89,6 +91,7 @@ public class Add_evenementController implements Initializable {
     //pour la fonction initialize
     Adresse a = new Adresse();
     //pour le fonction parcourir (image)
+    public String lien;
     private FileChooser fileChooser;
     private File file;
     private Image image;
@@ -181,16 +184,13 @@ public class Add_evenementController implements Initializable {
         Stage stagec = (Stage) parent.getScene().getWindow();
         file = fileChooser.showOpenDialog(stagec);
         if (file != null) {
-            //desktop.open(file);
-            image = new Image(file.toURI().toString());
-            IVimage.setImage(image);
-            TApath.setText(file.getAbsolutePath());
-
+           this.lien=file.getPath();
+         
         }
     }
 
     @FXML
-    void onCreerClicked(ActionEvent event) throws SQLException, FileNotFoundException {
+    void onCreerClicked(ActionEvent event) throws SQLException, FileNotFoundException, ProtocolException, IOException {
 
         //System.out.println(d);
         a.setGov(CBgovernorat.getSelectionModel().getSelectedItem());
@@ -200,15 +200,15 @@ public class Add_evenementController implements Initializable {
         String s = a.toString();
         EvenementService es = new EvenementService();
         UserSevice u = new UserSevice();
-
+TApath.setText(lien);
         if (!TFnom.getText().isEmpty() && !TFrue.getText().isEmpty() && !TFrue.getText().isEmpty()
                 && !CBgovernorat.getSelectionModel().isEmpty()
                 && !TApath.getText().isEmpty()) {
-            fis = new FileInputStream(file);
+           
             LocalDate date = datepicker.getValue();
             java.sql.Date dd = convertToDateViaSqlDate(date);
-
-            Evenement e = new Evenement(TFnom.getText(), s, TFcap.getText(), dd ,heure.getValue().toString(), u.getidUSERByusername(), (InputStream) fis);
+            FileUploader fu = new FileUploader("localhost/integration/test1.1/web/images"); 
+            Evenement e = new Evenement(TFnom.getText(), s, TFcap.getText(), dd ,heure.getValue().toString(), u.getidUSERByusername(),fu.upload(lien) );
             System.out.println(dd);
             System.out.println(heure.getValue().toString());
             idlastevent = es.createEvent(e);

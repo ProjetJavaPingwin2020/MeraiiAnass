@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.FXMLAfficherFormationController">
+   <children>
+      <TableView fx:id="table" layoutX="339.0" layoutY="209.0" onMouseClicked="#display" prefHeight="208.0" prefWidth="658.0" stylesheets="@main.css" />
+      <ImageView fx:id="image" fitHeight="143.0" fitWidth="184.0" layoutX="381.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="nom" layoutX="167.0" layoutY="533.0" opacity="0.0" />
+      <TextField fx:id="type" layoutX="299.0" layoutY="521.0" opacity="0.0" />
+      <TextField fx:id="date" layoutX="460.0" layoutY="359.0" opacity="0.0" />
+      <TextField fx:id="lieu" layoutX="120.0" layoutY="421.0" opacity="0.0" />
+      <TextField fx:id="description" layoutX="283.0" layoutY="421.0" opacity="0.0" />
+      <TextField fx:id="heure" layoutX="473.0" layoutY="409.0" opacity="0.0" />
+      <TextField fx:id="nbrplace" layoutX="134.0" layoutY="465.0" opacity="0.0" />
+      <TextField fx:id="formateur" layoutX="283.0" layoutY="500.0" opacity="0.0" />
+      <Button fx:id="supprimer" layoutX="674.0" layoutY="506.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="39.0" prefWidth="155.0" stylesheets="@main.css" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <ImageView fx:id="retour" fitHeight="100.0" fitWidth="104.0" layoutX="873.0" layoutY="512.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/1.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="recherche" layoutX="468.0" layoutY="155.0" onAction="#RechercheAV" prefHeight="25.0" prefWidth="525.0" style="-fx-border-color: #a8ae21; -fx-border-width: 2;" />
+      <Label layoutX="354.0" layoutY="159.0" text="Recherche">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <ImageView fitHeight="39.0" fitWidth="28.0" layoutX="685.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/trush.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="pane11" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane2" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane3" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane4" prefHeight="146.0" prefWidth="1020.0" />
+      <ImageView fx:id="logout" fitHeight="39.0" fitWidth="33.0" layoutX="910.0" layoutY="69.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/deconnexion.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="EspecesBtn" layoutX="244.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Espèces" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="EvenementsBtn" layoutX="424.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Evénéments" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="InformationsBtn" layoutX="751.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Informations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="BoutiqueBtn" layoutX="73.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="FormationsBtn" layoutX="591.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionFormation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Formations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER_LEFT" layoutY="332.0" opacity="0.8" prefHeight="50.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+         <children>
+            <Button fx:id="listeformations" mnemonicParsing="false" onAction="#listeformations" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Liste des formations" wrappingWidth="188.4404296875">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="197.0" opacity="0.8" prefHeight="54.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+         <children>
+            <Button fx:id="listeformateurs" mnemonicParsing="false" onAction="#listeformateurs" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Liste des formateurs" wrappingWidth="186.4404296875">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="265.0" opacity="0.8" prefHeight="50.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+         <children>
+            <Button fx:id="addformation" mnemonicParsing="false" onAction="#addformation" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Ajouter une formation" wrappingWidth="191.4404296875">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="399.0" opacity="0.8" prefHeight="50.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+         <children>
+            <Button fx:id="stat" mnemonicParsing="false" onAction="#stat" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Statistiques" wrappingWidth="188.4404296875">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+     
+   </children>
+</AnchorPane>

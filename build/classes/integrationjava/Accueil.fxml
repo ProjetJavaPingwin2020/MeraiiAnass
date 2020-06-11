@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.AccueilController">
+   <children>
+      <Label fx:id="Lhello" prefHeight="31.0" prefWidth="193.0" textFill="#82bf40" />
+      <Pane fx:id="pane11" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane2" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane3" prefHeight="146.0" prefWidth="1020.0" />
+      <Pane fx:id="pane4" prefHeight="146.0" prefWidth="1020.0" />
+      <ImageView fx:id="logout" fitHeight="39.0" fitWidth="33.0" layoutX="950.0" layoutY="59.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/deconnexion.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="panier" fitHeight="39.0" fitWidth="43.0" layoutX="890.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/panier.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="EspecesBtn" layoutX="244.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionEspece" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Espèces" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="EvenementsBtn" layoutX="424.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionEvent" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Evénéments" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="InformationsBtn" layoutX="751.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionInformation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Informations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="BoutiqueBtn" layoutX="73.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionBoutique" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="FormationsBtn" layoutX="591.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionFormation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Formations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <WebView fx:id="webView" layoutX="151.0" layoutY="161.0" prefHeight="425.0" prefWidth="258.0" />
+      <MediaView fx:id="mv" fitHeight="250.0" fitWidth="500.0" layoutX="463.0" layoutY="249.0" />
+   </children>
+</AnchorPane>

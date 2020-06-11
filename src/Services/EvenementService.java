@@ -8,6 +8,7 @@ package Services;
 import Entity.Demande;
 import Entity.Evenement;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,10 +36,10 @@ public class EvenementService {
     Connection cnx;
     ConnexionBase db = getInstance();
     
-    private final String Create_Evenement = "insert into evenement(nom_evenement,adresse,description,date,heure,chef_id,image) VALUES(?,?,?,?,?,?,?)";
+    private final String Create_Evenement = "insert into evenement(nom_evenement,adresse,description,date,heure,chef_id,nom_image) VALUES(?,?,?,?,?,?,?)";
     private final String GET_All_USER_Evenements = "select id_event, nom_evenement, date, heure, adresse, description, chef_id   from evenement where chef_id = ?";
     private final String Delete_Evenement_BY_ID = "delete from evenement where id_event=?";
-    private final String Udate_Evenement = "update evenement set nom_evenement=?,adresse=?,date=?,heure=?,description=?,image=? where id_event=?";
+    private final String Udate_Evenement = "update evenement set nom_evenement=?,adresse=?,date=?,heure=?,description=?,nom_image=? where id_event=?";
     private final String GET_All_Evenements = "select id_event, nom_evenement, date,heure, adresse, description, chef_id   from evenement";
     private final String GET_USER_BY_ID = "SELECT id_event, nom_evenement, date,heure, adresse, description, chef_id FROM evenement WHERE id_event=?";
 
@@ -58,7 +59,7 @@ public class EvenementService {
         ps.setDate(4, e.getDate());
         ps.setString(5, e.getHeure());
         ps.setInt(6, e.getChef_id());
-        ps.setBinaryStream(7, e.getImage());
+        ps.setString(7, e.getImage());
 
         ps.executeUpdate();
         ResultSet rs = psid.executeQuery();
@@ -75,7 +76,7 @@ public class EvenementService {
         ps.setString(3, "En cours !");
 
         ps.executeUpdate();
-        System.out.println("demande ajouter");
+        System.out.println("demande ajoutée !");
 
     }
       public ObservableList<Evenement> getAllUserOwnedEvenements(int idchef) throws SQLException {
@@ -107,24 +108,15 @@ public class EvenementService {
 
         return e;
     }
-        public Image getEvenementImageByID(int id) throws SQLException, FileNotFoundException, IOException {
-        PreparedStatement ps = cnx.prepareStatement("SELECT image FROM evenement WHERE id_event = ?");
+         public String getEvenementImageByID(int id) throws SQLException, FileNotFoundException, IOException {
+        String is = "";
+        PreparedStatement ps = cnx.prepareStatement("SELECT nom_image FROM evenement WHERE id_event = ?");
         ps.setInt(1, id);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            InputStream is = rs.getBinaryStream("image");
-            OutputStream os = new FileOutputStream(new File("photo.jpg"));
-            byte[] content = new byte[1024];
-            int size = 0;
-            while ((size = is.read(content)) != -1) {
-                os.write(content, 0, size);
-            }
-            os.close();
-            is.close();
-
+            is = rs.getString("nom_image");
         }
-        Image image = new Image("file:photo.jpg");
-        return image;
+        return is;
     }
         
         public void deleteEvenementById(int id) throws SQLException {
@@ -134,7 +126,7 @@ public class EvenementService {
         System.out.println("deleted");
 
     }
-     public void updateEvenement(Evenement e) {
+ public void updateEvenement(Evenement e) {
 
         PreparedStatement ps;
         try {
@@ -144,7 +136,7 @@ public class EvenementService {
             ps.setDate(3, e.getDate());
             ps.setString(4, e.getHeure());
             ps.setString(5, e.getDescription());
-            ps.setBinaryStream(6, e.getImage());
+            ps.setString(6, e.getImage());
             ps.setInt(7, e.getId_event());
 
             ps.executeUpdate();
@@ -155,48 +147,35 @@ public class EvenementService {
 
     }
      
-      public ObservableList<ImageView> getAllEvenementImages() throws SQLException, FileNotFoundException, IOException {
+    public ObservableList<ImageView> getAllEvenementImages() throws SQLException, FileNotFoundException, IOException {
+       
+        String is = "";
         ObservableList<ImageView> img = FXCollections.observableArrayList();
-        PreparedStatement ps = cnx.prepareStatement("SELECT image FROM evenement");
+        PreparedStatement ps = cnx.prepareStatement("SELECT nom_image FROM evenement");
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            InputStream is = rs.getBinaryStream("image");
-            OutputStream os = new FileOutputStream(new File("photo.jpg"));
-            byte[] content = new byte[1024];
-            int size = 0;
-            while ((size = is.read(content)) != -1) {
-                os.write(content, 0, size);
-            }
-            os.close();
-            is.close();
-            Image image = new Image("file:photo.jpg");
-            ImageView iv = new ImageView(image);
-            img.add(iv);
+            
+            is = rs.getString("nom_image");
+             Image image = new Image(new FileInputStream("D:\\wamp64\\www\\integration\\test1.1\\web\\images\\"+is));
+               ImageView imgEvt = new ImageView(image);
+            img.add(imgEvt);
         }
         return img;
     }
       
     
-     public ObservableList<ImageView> getAllSearshedEvenementImages(String nom) throws SQLException, FileNotFoundException, IOException {
+    public ObservableList<String> getAllSearshedEvenementImages(String nom) throws SQLException, FileNotFoundException, IOException {
+        ObservableList<String> li = null;
+        String is = "";
         ObservableList<ImageView> img = FXCollections.observableArrayList();
-        PreparedStatement ps = cnx.prepareStatement("SELECT image FROM evenement WHERE nom_evenement LIKE ?");
+        PreparedStatement ps = cnx.prepareStatement("SELECT nom_image FROM evenement WHERE nom_evenement LIKE ?");
         ps.setString(1, "%" + nom + "%");
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            InputStream is = rs.getBinaryStream("image");
-            OutputStream os = new FileOutputStream(new File("photo.jpg"));
-            byte[] content = new byte[1024];
-            int size = 0;
-            while ((size = is.read(content)) != -1) {
-                os.write(content, 0, size);
-            }
-            os.close();
-            is.close();
-            Image image = new Image("file:photo.jpg");
-            ImageView iv = new ImageView(image);
-            img.add(iv);
+            is = rs.getString("image");
+            li.add(is);
         }
-        return img;
+        return li;
     }
       public int getidEventByName(String s) throws SQLException {
         PreparedStatement ps = cnx.prepareStatement("SELECT id_event FROM evenement WHERE nom_evenement=?");
@@ -205,6 +184,16 @@ public class EvenementService {
         rs.next();//next return boolean
         return rs.getInt(1);
     }
+      
+       public String getetatEventByName(int id_event, int id_user) throws SQLException {
+        PreparedStatement ps = cnx.prepareStatement("SELECT etat FROM demande WHERE idE=? and idU=?");
+        ps.setInt(1, id_event);
+         ps.setInt(2, id_user);
+        ResultSet rs = ps.executeQuery();
+        rs.next();//next return boolean
+        return rs.getString(1);
+    }
+
       
     public boolean alreadyMembre(int id_event, int id_user) throws SQLException {
         int count = 0;
@@ -241,6 +230,39 @@ public class EvenementService {
         rs.next();//next return boolean
         return ResultsToEvenement(rs.getInt(1), rs.getString(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
     }
+ 
+     public ObservableList<String> getAllEvenementusers(int idevent) throws SQLException {
+        ObservableList<String> a = FXCollections.observableArrayList();
+        PreparedStatement ps = cnx.prepareStatement("SELECT u.username, u.email FROM demande a INNER JOIN fos_user u ON u.id = a.idU WHERE idE =?");
+        ps.setInt(1, idevent);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            a.add(rs.getString(1) + " email :" + rs.getString(2));
+//            a.add("hello");
+        }
+
+        return a;
+    }
+     
+         public void deleteparticipant(int idevent, int idu) throws SQLException {
+        PreparedStatement ps = cnx.prepareStatement("DELETE FROM demande WHERE idE=? AND idU=?");
+        ps.setInt(1, idevent);
+        ps.setInt(2, idu);
+        ps.executeUpdate();
+        System.out.println("no longer participant");
+
+    }
+         
+             public int countparticipant() throws SQLException{
+        int count = 0;
+        PreparedStatement ps = cnx.prepareStatement("SELECT COUNT(DISTINCT idU) FROM demande");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            count = rs.getInt(1);
+        }
+        return count;
+    }
+    
 
    
    

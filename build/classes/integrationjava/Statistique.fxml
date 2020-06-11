@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetpidev.StatistiqueController">
+   <children>
+      <Pane layoutX="40.0" layoutY="16.0" prefHeight="368.0" prefWidth="528.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow color="#00d6ff" height="43.23" radius="22.97" spread="0.58" width="50.65" />
+         </effect>
+      </Pane>
+      <PieChart fx:id="piechart1" layoutX="49.0" layoutY="21.0" prefHeight="358.0" prefWidth="511.0" />
+   </children>
+</AnchorPane>

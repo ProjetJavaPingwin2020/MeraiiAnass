@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="listview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#chatAction" prefHeight="652.0" prefWidth="1045.0" style="-fx-background-color: 1B3A24;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.CommentaireController">
+    
+   <children>
+      
+      <JFXButton fx:id="AddArticle" buttonType="RAISED" layoutX="244.0" layoutY="579.0" onAction="#AddCom" prefHeight="39.0" prefWidth="230.0" ripplerFill="#77a168" style=": 5em;" stylesheets="@main.css" text="Addcomments" textFill="#fffbf4" textOverrun="CLIP" />
+   
+      <JFXButton fx:id="load" layoutX="783.0" layoutY="199.0" mnemonicParsing="false" onAction="#Loadcom" prefHeight="32.0" prefWidth="157.0" stylesheets="@main.css" text="load comments" textFill="WHITE" />
+      <Separator layoutX="693.0" layoutY="148.0" orientation="VERTICAL" prefHeight="354.0" prefWidth="4.0" />
+      <ImageView fx:id="imageview" fitHeight="90.0" fitWidth="115.0" layoutX="916.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="count" layoutX="485.0" layoutY="527.0" prefHeight="17.0" prefWidth="157.0" />
+      <Label fx:id="fileselected" layoutX="904.0" layoutY="498.0" prefHeight="17.0" prefWidth="140.0" textFill="#e70f0f" />
+      <Label fx:id="labeltitre" layoutX="720.0" layoutY="102.0" prefHeight="17.0" prefWidth="307.0" textFill="#e70f0f" />
+      <Label fx:id="labelcontenu" layoutX="724.0" layoutY="287.0" prefHeight="17.0" prefWidth="307.0" textFill="#e70f0f" />
+      <Label fx:id="labelimage" layoutX="720.0" layoutY="411.0" prefHeight="17.0" prefWidth="307.0" textFill="#e70f0f" />
+      <Label fx:id="labeltype" layoutX="711.0" layoutY="359.0" prefHeight="17.0" prefWidth="307.0" textFill="#e70f0f" />
+      <Label layoutX="60.0" layoutY="375.0" text="Article" />
+      <ComboBox fx:id="check" layoutX="128.0" layoutY="383.0" prefHeight="25.0" prefWidth="395.0" />
+      <TableView fx:id="cc_com" layoutX="707.0" layoutY="254.0" onMouseClicked="#SelectItemes" prefHeight="354.0" prefWidth="298.0">
+        <columns>
+          <TableColumn fx:id="cc_contenucom" onEditStart="#changeContenuCellEvent" prefWidth="154.0" text="Contenu" />
+          <TableColumn fx:id="cc_articlecom" prefWidth="143.0" text="Article" />
+        </columns>
+      </TableView>
+      <Label fx:id="Lhello" prefHeight="31.0" prefWidth="193.0" textFill="#82bf40" />
+      <Pane fx:id="pane11" prefHeight="119.0" prefWidth="1100.0" />
+      <Pane fx:id="pane2" prefHeight="129.0" prefWidth="1100.0" />
+      <Pane fx:id="pane3" prefHeight="129.0" prefWidth="1100.0" />
+      <Pane fx:id="pane4" prefHeight="119.0" prefWidth="1100.0" />
+      <ImageView fx:id="logout" fitHeight="39.0" fitWidth="33.0" layoutX="950.0" layoutY="59.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/deconnexion.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="panier" fitHeight="39.0" fitWidth="43.0" layoutX="890.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/panier.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="EspecesBtn" layoutX="244.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #aae21;" stylesheets="@main.css" text="Espèces" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="EvenementsBtn" layoutX="424.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Evénéments" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="InformationsBtn" layoutX="751.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Informations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="BoutiqueBtn" layoutX="73.0" layoutY="59.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="FormationsBtn" layoutX="591.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionFormation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Formations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <JFXButton fx:id="smssend" buttonType="RAISED" layoutX="523.0" layoutY="583.0" onAction="#smsload" prefHeight="32.0" prefWidth="125.0" ripplerFill="#77a168" style=": 5em;" stylesheets="@main.css" text="SEND SMS !" textFill="#fffbf4" textOverrun="CLIP" />
+      <JFXButton fx:id="print1" layoutX="23.0" layoutY="579.0" mnemonicParsing="false" onAction="#back" prefHeight="32.0" prefWidth="74.0" style="-fx-background-color: #a8ae21; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="BACK" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="39.0" fitWidth="46.0" layoutX="711.0" layoutY="194.0">
+         <image>
+            <Image url="@../../../../../images/loadd.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="54.0" layoutY="259.0" text="Contenu" />
+      <JFXTextField fx:id="contenu_com" layoutX="128.0" layoutY="194.0" prefHeight="146.0" prefWidth="395.0" />
+      <ImageView fitHeight="39.0" fitWidth="46.0" layoutX="606.0" layoutY="148.0">
+         <image>
+            <Image url="@../../../../../images/chatt.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

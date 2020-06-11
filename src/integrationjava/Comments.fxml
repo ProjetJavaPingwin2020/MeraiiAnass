@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="listview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="978.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.ComentsController">
+<StackPane fx:id="DetailsEvenementStackPane" minWidth="-Infinity" prefHeight="400.0" prefWidth="592.0" stylesheets="@main.css">
+                   
+                                            <stylesheets>
+                     
+                    </stylesheets>
+                </StackPane>
+                
+                                                            <AnchorPane fx:id="GUI" layoutX="202.0" layoutY="44.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="728.0" stylesheets="@main.css">
+                         <children>
+                             <BorderPane layoutX="-14.0" layoutY="36.0" prefHeight="200.0" prefWidth="742.0" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+            
+                                                                        <center>
+                                     <VBox prefHeight="375.0" prefWidth="532.0" BorderPane.alignment="CENTER">
+                                         <children>
+                                             <HBox alignment="CENTER" prefHeight="144.0" prefWidth="742.0">
+                                                 <children>
+                                                     <ScrollPane fx:id="scrollPaneCommentaire" hbarPolicy="NEVER" prefHeight="144.0" prefWidth="433.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+                                                         <content>
+                                                             <VBox fx:id="content" alignment="TOP_CENTER" prefHeight="148.0" prefWidth="438.0" />
+                                                         </content>
+                                                     </ScrollPane>
+                                                 </children>
+                                             </HBox>
+                     
+                                                                                                            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="599.0">
+                                                 <children>
+                                                     <TextArea fx:id="commentaire_text_fx" prefHeight="55.0" prefWidth="448.0">
+                                                         <HBox.margin>
+                                                             <Insets top="20.0" />
+                                                         </HBox.margin>
+                                                     </TextArea>
+                                                 </children>
+                                             </HBox>
+                           
+                                                                                                            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="720.0">
+                                                 <children>
+                                                     <Button mnemonicParsing="false" onAction="#ajouterCommentaireEvenement" prefHeight="49.0" prefWidth="152.0" styleClass="font-button" text="Partager" />
+                                                 </children>
+                                             </HBox>
+                    
+                                                                                                        </children>
+                                     </VBox>
+                                 </center>
+                             </BorderPane>
+                         </children>
+                     </AnchorPane>
+   <Button fx:id="BoutiqueBtn" layoutX="83.0" layoutY="69.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="157.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Espace Chat Admin" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <ImageView layoutX="110.0" layoutY="385.0">
+      <image>
+         <Image url="@../../../../../images/femme.png" />
+      </image>
+   </ImageView>
+   <JFXButton fx:id="print1" layoutX="20.0" layoutY="428.0" mnemonicParsing="false" onAction="#back" prefHeight="32.0" prefWidth="74.0" style="-fx-background-color: #a8ae21; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="BACK" textFill="WHITE">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </JFXButton>
+                </AnchorPane>

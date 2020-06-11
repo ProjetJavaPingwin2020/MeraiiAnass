@@ -5,7 +5,7 @@
  */
 package Entity;
 
-import java.io.InputStream;
+
 import java.sql.Date;
 
 /**
@@ -20,7 +20,7 @@ public class Evenement {
     private Date date;
     private String description;
     private String heure;
-    private InputStream image;
+    private String image;
     
     public Evenement() {
     }
@@ -35,7 +35,7 @@ public class Evenement {
         this.description = description;
     }
 
-    public Evenement(int id_event, int chef_id, String nom_evenement, String adresse, Date date, String description, String heure, InputStream image) {
+    public Evenement(int id_event, int chef_id, String nom_evenement, String adresse, Date date, String description, String heure, String image) {
         this.id_event = id_event;
         this.chef_id = chef_id;
         this.nom_evenement = nom_evenement;
@@ -46,7 +46,7 @@ public class Evenement {
         this.image = image;
     }
 
-    public Evenement(int id_event, String nom_evenement, String adresse, String description, InputStream image) {
+    public Evenement(int id_event, String nom_evenement, String adresse, String description, String image) {
         this.id_event = id_event;
         this.nom_evenement = nom_evenement;
         this.adresse = adresse;
@@ -54,13 +54,13 @@ public class Evenement {
         this.image = image;
     }
 
-    public Evenement(String nom_evenement, String adresse, String description, InputStream image) {
+    public Evenement(String nom_evenement, String adresse, String description, String image) {
         this.nom_evenement = nom_evenement;
         this.adresse = adresse;
         this.description = description;
         this.image = image;
     }
-        public Evenement(String nom_evenement, String adresse, String description,Date date, String heure, int chef_id,InputStream img) {
+        public Evenement(String nom_evenement, String adresse, String description,Date date, String heure, int chef_id,String img) {
         this.nom_evenement = nom_evenement;
         this.adresse = adresse;
         this.description = description;
@@ -70,7 +70,7 @@ public class Evenement {
         this.image = img;
     }
 
-    public Evenement(int chef_id, String nom_evenement, String adresse, Date date, String description, String heure, InputStream image) {
+    public Evenement(int chef_id, String nom_evenement, String adresse, Date date, String description, String heure, String image) {
         this.chef_id = chef_id;
         this.nom_evenement = nom_evenement;
         this.adresse = adresse;
@@ -145,11 +145,11 @@ public class Evenement {
         this.heure = heure;
     }
 
-    public InputStream getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(InputStream image) {
+    public void setImage(String image) {
         this.image = image;
     }
     

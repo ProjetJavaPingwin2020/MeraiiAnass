@@ -1,0 +1,57 @@
+.button{
+    -fx-background-color : #a8ae21;
+    -fx-background-radius : 22;
+    -fx-text-fill: white;
+        
+}
+
+.button:hover
+{
+-fx-background-color : white ;
+-fx-background-radius :  22;
+-fx-text-fill: #a8ae21;
+-fx-border-color: #a8ae21;
+-fx-border-radius: 20;
+-fx-border-width: 3;
+}
+
+.button:pressed
+{
+ -fx-background-color : white ;
+-fx-background-radius :  22;
+-fx-text-fill: #a8ae21;
+-fx-border-color: #a8ae21;
+-fx-border-radius: 20;
+-fx-border-width: 3;
+ -fx-rotate: 10;
+}
+.table-view .column-header-background .label{
+    -fx-background-color:  #a8ae21;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color:   #a8ae21;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: black;
+}
+.table-view .table-cell{
+    -fx-text-fill:#black;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #white;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+
+
+.table-row-cell:selected {
+  
+    -fx-background-color: #cae189;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}

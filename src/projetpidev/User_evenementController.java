@@ -48,6 +48,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import rest.file.uploader.tn.FileUploader;
 
 /**
  * FXML Controller class
@@ -87,6 +88,7 @@ public class User_evenementController implements Initializable {
     private File file;
     private Image image;
     private FileInputStream fis;
+    public String lien;
     @FXML
     private DatePicker datepicker;
     @FXML
@@ -193,9 +195,10 @@ public class User_evenementController implements Initializable {
         //https://howtodoinjava.com/java/date-time/java-localtime/
         LocalTime localTimeObj = LocalTime.parse(event.getHeure());
         heure.setValue(localTimeObj);
-
+  Image image = new Image(new FileInputStream("D:\\wamp64\\www\\integration\\test1.1\\web\\images\\"+es.getEvenementImageByID(event.getId_event())));
+               // ImageView imgEvt = new ImageView(image);
         System.out.println(event.getId_event());
-        IVimage.setImage(es.getEvenementImageByID(event.getId_event()));
+        IVimage.setImage(image);
 
     }
 
@@ -224,7 +227,9 @@ public class User_evenementController implements Initializable {
         java.sql.Date dd = convertToDateViaSqlDate(date);
         evnt.setDate(dd);
         evnt.setAdresse(s);
-        evnt.setImage((InputStream) fis);
+        FileUploader fu = new FileUploader("localhost/integration/test1.1/web/images"); 
+        
+        evnt.setImage(fu.upload(lien));
 
         System.out.println(evnt.getId_event());
         EvenementService es = new EvenementService();
@@ -254,6 +259,7 @@ public class User_evenementController implements Initializable {
         Stage stagec = (Stage) parent.getScene().getWindow();
         file = fileChooser.showOpenDialog(stagec);
         if (file != null) {
+            lien=file.getPath();
             //desktop.open(file);
             image = new Image(file.toURI().toString());
             IVimage.setImage(image);

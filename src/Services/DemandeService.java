@@ -42,7 +42,7 @@ public class DemandeService {
        public ObservableList<Demande> Affichage() throws SQLException {
         ObservableList<Demande> d = FXCollections.observableArrayList();
         PreparedStatement ps = cnx.prepareStatement(GET_All_USER_Demandes);
-        UserSevice us = new UserSevice();
+        UserService us = new UserService();
         EvenementService es =new EvenementService();
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {

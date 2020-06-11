@@ -9,6 +9,7 @@ import Entity.Evenement;
 import Entity.Login;
 import Services.EvenementService;
 import Services.UserSevice;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -32,6 +33,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -80,7 +82,6 @@ public class Get_all_evenementController implements Initializable {
         EvenementService es = new EvenementService();
         try {
             ObservableList<ImageView> ivs = es.getAllEvenementImages();
-
             ObservableList<Evenement> els = es.getAllevenements();
             ObservableList<Label> labels = FXCollections.observableArrayList();
 
@@ -99,7 +100,6 @@ public class Get_all_evenementController implements Initializable {
                 labels.get(i).setFont(new Font(MAX_FONT_SIZE));
                 labels.get(i).setPadding(new Insets(70, 0, 0, 0));
                 hbs.add(new HBox(ivs.get(i), labels.get(i)));
-
             }
             for (int i = 0; i < ivs.size(); i++) {
                 hbs.get(i).setSpacing(80);

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="1270.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.FXMLPanierController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="138.0" prefWidth="1272.0">
+         <children>
+            <ImageView fitHeight="176.0" fitWidth="1272.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/panierbackground.jpg" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <TableView fx:id="liste_commande" layoutX="249.0" layoutY="237.0" prefHeight="375.0" prefWidth="787.0" style="-fx-background-color: transparent;" stylesheets="@tableview.css">
+         <columns>
+            <TableColumn fx:id="imagecommande" minWidth="0.0" prefWidth="141.0" />
+            <TableColumn fx:id="produit_commande" minWidth="0.0" prefWidth="141.0" text="Nom Produit" />
+            <TableColumn fx:id="quantite_commande" minWidth="0.0" prefWidth="149.0" text="Quantité Commande" />
+            <TableColumn fx:id="prixtotal_commande" minWidth="0.0" prefWidth="118.0" text="Prix Total" />
+            <TableColumn fx:id="etat_commande" minWidth="0.0" prefWidth="130.0" text="Etat " />
+            <TableColumn fx:id="paye_commande" minWidth="0.0" prefWidth="111.0" text="Payée ?" />
+         </columns>
+      </TableView>
+      <Text fill="#00dd2c" layoutX="536.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consulter Votre Panier" wrappingWidth="390.265625">
+         <font>
+            <Font name="Arial Black" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="id_commande" layoutX="967.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fill="#aeaeae" layoutX="17.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="43.13669899106026">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#aeaeae" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Pane layoutX="16.0" layoutY="281.0" prefHeight="330.0" prefWidth="200.0" style="-fx-background-color: #e0e0d1;">
+         <effect>
+            <DropShadow color="#9cab9f" />
+         </effect>
+         <children>
+            <Button fx:id="payer" layoutX="26.0" layoutY="61.0" mnemonicParsing="false" onAction="#Payer" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: black;" text="Payer Commande" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="edit" layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#edit" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: black;" text="Modifier Commande" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="supprimer" layoutX="25.0" layoutY="225.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: black;" text="Supprimer Commande" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="163.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/unnamed%20(3).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="164.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/unnamed%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="39.0" layoutX="161.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/remove_product_shopping_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="1061.0" layoutY="310.0" prefHeight="330.0" prefWidth="200.0" style="-fx-background-color: #e0e0d1;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <TextField fx:id="quantite_new" layoutX="40.0" layoutY="152.0" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false" />
+            <Text fx:id="new_quantite" layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrez la nouvelle Qantité Souhaitée:" visible="false" wrappingWidth="172.99997997283936">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="com" fitHeight="104.0" fitWidth="95.0" layoutX="53.0" layoutY="220.0" onMouseMoved="#com" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Dream_Pad_Logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="confirmer" layoutX="65.0" layoutY="193.0" mnemonicParsing="false" onAction="#confirmer" style="-fx-background-color: transparent; -fx-border-color: black;" text="Confirmer" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneprix" layoutX="241.0" layoutY="608.0" onMouseMoved="#paneprix" prefHeight="138.0" prefWidth="803.0" style="-fx-background-color: #e0e0d1;">
+         <effect>
+            <DropShadow height="43.24" radius="17.785" width="29.9" />
+         </effect>
+         <children>
+            <VBox prefHeight="138.0" prefWidth="159.0" style="-fx-background-color: #FFCC00;">
+               <children>
+                  <Pane prefHeight="138.0" prefWidth="142.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="133.0" layoutX="47.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/remove_product_delete-512.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="25.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarif des achats">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <Text fill="#e4af00" fontSmoothingType="LCD" layoutX="173.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le Nombre de produit dans votre panier est :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#44e507" layoutX="622.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix Totale des achats:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="total" fill="#da0000" layoutX="654.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="91.999990940094">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#da0000" layoutX="749.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinars">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Text fx:id="nb_prod" fill="#ffb90a" layoutX="479.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="45.0" layoutY="148.0" prefHeight="138.0" prefWidth="142.0">
+         <children>
+            <HBox layoutX="-22.0" layoutY="35.0" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #e0e0d1;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Pane prefHeight="59.0" prefWidth="92.0" style="-fx-background-color: black;">
+                     <children>
+                        <Text fill="#aeaeae" layoutX="26.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " wrappingWidth="43.13669899106026">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#aeaeae" layoutX="9.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d'utilisateur">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="59.0" prefWidth="95.0">
+                     <children>
+                        <Text fx:id="username" layoutX="28.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children></Pane>
+      <Pane layoutX="57.0" layoutY="253.0" prefHeight="57.0" prefWidth="121.0" style="-fx-background-color: black;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fill="WHITE" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Box">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="1101.0" layoutY="245.0" prefHeight="57.0" prefWidth="121.0" style="-fx-background-color: black;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fill="WHITE" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="46.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="1124.0" layoutY="643.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="1142.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="86.0" fitWidth="95.0" layoutX="1153.0" layoutY="659.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="1168.0" layoutY="656.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="31.0" layoutX="1148.0" layoutY="641.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="117.0" fitWidth="138.0" layoutX="59.0" layoutY="572.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/6.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chariot" fitHeight="65.0" fitWidth="95.0" layoutX="425.0" layoutY="158.0" onMouseMoved="#chariot" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/144b5f24ddf503ee1b244cfbaed40c2f.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="65.0" layoutX="1202.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/back-png-3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="1148.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/design.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="104.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/profile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="79.0" layoutX="1127.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Customer-Support-icon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="FormationsBtn" layoutX="707.0" layoutY="48.0" mnemonicParsing="false" onAction="#redirectionFormation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Formations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="BoutiqueBtn" layoutX="189.0" layoutY="48.0" mnemonicParsing="false" onAction="#redirectionBoutique" onMouseClicked="#Pro" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="InformationsBtn" layoutX="867.0" layoutY="48.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Informations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="EvenementsBtn" layoutX="540.0" layoutY="48.0" mnemonicParsing="false" onAction="#redirectionEvent" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Evénéments" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="EspecesBtn" layoutX="360.0" layoutY="48.0" mnemonicParsing="false" onAction="#redirectionEspeces"  opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Espèces" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="panier" fitHeight="39.0" fitWidth="43.0" layoutX="1006.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/panier.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="logout" fitHeight="39.0" fitWidth="33.0" layoutX="1066.0" layoutY="48.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/deconnexion.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Lhello" layoutX="116.0" layoutY="14.0" prefHeight="31.0" prefWidth="193.0" textFill="#82bf40" />
+      <Text fx:id="yass" layoutX="56.0" layoutY="885.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="43.13671875" />
+      <ImageView fitHeight="42.0" fitWidth="64.0" layoutX="172.0" layoutY="660.0" onMouseClicked="#Messenger" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cahtmessagechattingconversationbubblessend_ic_name_of_icon_24px-01-512.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="username1" layoutX="19.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Après Vente :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

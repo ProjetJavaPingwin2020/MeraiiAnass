@@ -4,32 +4,22 @@
  * and open the template in the editor.
  */
 package Entity;
-import projetpidev.FXMLLoginController;
 
 /**
  *
- * @author milim
+ * @author asus
  */
 public class Login {
+
     static int id;
     static int id_user;
     static String username;
     static String mail;
+    static String nomformation;
     static String nom_event;
-  
 
     public Login() {
     }
-
-    public static String getNom_event() {
-        return nom_event;
-    }
-
-    public static void setNom_event(String nom_event) {
-        Login.nom_event = nom_event;
-    }
-
-   
 
     public Login(int id, int id_user, String username, String mail) {
         this.id = id;
@@ -37,13 +27,14 @@ public class Login {
         this.username = username;
         this.mail = mail;
     }
-
-    public Login(int id_user, String username, String mail) {
+    
+      public Login(int id_user, String username, String mail) {
+        this.id = id;
         this.id_user = id_user;
         this.username = username;
         this.mail = mail;
     }
-
+    
     public static int getId() {
         return id;
     }
@@ -75,6 +66,21 @@ public class Login {
     public static void setMail(String mail) {
         Login.mail = mail;
     }
-    
-    
+
+    public static String getNomformation() {
+        return nomformation;
+    }
+
+    public static void setNomformation(String nomformation) {
+        Login.nomformation = nomformation;
+    }
+
+    public static String getNom_event() {
+        return nom_event;
+    }
+
+    public static void setNom_event(String nom_event) {
+        Login.nom_event = nom_event;
+    }
+
 }

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="rootpane" minHeight="-Infinity" prefHeight="680.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.FXMLFrontProduitController">
+   <children>
+      <Label fx:id="Lhello" layoutX="25.0" layoutY="766.0" prefHeight="31.0" prefWidth="193.0" textFill="#82bf40" />
+      <Pane layoutX="38.0" layoutY="252.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="382.0" prefWidth="205.0" style="-fx-background-color: #ffcc00;">
+         <children>
+            <Button fx:id="Peche" layoutX="29.0" layoutY="201.0" mnemonicParsing="false" onAction="#peche" prefHeight="68.0" prefWidth="148.0" style="-fx-background-color: black;" text="Nos Produits Pêche" textFill="#fffbfb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="Chasse" layoutX="29.0" layoutY="83.0" mnemonicParsing="false" onAction="#chasse" prefHeight="68.0" prefWidth="148.0" style="-fx-background-color: black;" text="Nos Produits Chasse" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="commande" fitHeight="36.0" fitWidth="43.0" layoutX="78.0" layoutY="305.0" onMouseClicked="#commande" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/information-512.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="60.0" layoutX="86.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/58a1f1b1c8dd3432c6fa81e5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="51.0" layoutX="79.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/double-rifle-2026149_960_720.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="41.0" layoutY="-12.0" prefHeight="59.0" prefWidth="124.0" style="-fx-background-color: #e0e0d1;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Text fill="WHITE" layoutX="11.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Categories">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="36.0" fitWidth="43.0" layoutX="84.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/forbidden.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="pane_chasse" layoutX="274.0" layoutY="224.0" prefHeight="410.0" prefWidth="756.0" style="-fx-background-color: #e0e0d1;">
+         <children>
+            <TableView fx:id="chasse" layoutX="46.0" layoutY="33.0" prefHeight="344.0" prefWidth="672.0" stylesheets="@tableview.css">
+              <columns>
+                <TableColumn fx:id="image" prefWidth="108.0" />
+                <TableColumn fx:id="nom" prefWidth="121.0" text="Nom Produit" />
+                  <TableColumn fx:id="description" prefWidth="200.0" text="Description Du Produit" />
+                  <TableColumn fx:id="prix" prefWidth="112.0" text="Prix" />
+                  <TableColumn fx:id="rating" prefWidth="136.0" text="Rating" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="-3.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/flamant-rose-marche-gif-anime-oiseau.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="721.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/poissonrougered.gif" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Text fill="#ffcc00" fontSmoothingType="LCD" layoutX="473.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nos Produits en Stock" underline="true" wrappingWidth="351.0234375">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="33.0" />
+         </font>
+         <effect>
+            <InnerShadow color="#ffbb00" />
+         </effect>
+      </Text>
+      <Pane fx:id="pane_peche" layoutX="274.0" layoutY="187.0" prefHeight="410.0" prefWidth="756.0" style="-fx-background-color: #e0e0d1;" visible="false">
+         <children>
+            <TableView fx:id="peche" layoutX="47.0" layoutY="33.0" prefHeight="344.0" prefWidth="672.0" stylesheets="@tableview.css">
+               <columns>
+                  <TableColumn fx:id="image1" prefWidth="108.0" />
+                  <TableColumn fx:id="nom1" prefWidth="121.0" text="Nom Produit" />
+                  <TableColumn fx:id="description1" prefWidth="200.0" text="Description Du Produit" />
+                  <TableColumn fx:id="prix1" prefWidth="112.0" text="Prix" />
+                  <TableColumn fx:id="rating1" prefWidth="136.0" text="Rating" />
+               </columns>
+            </TableView>
+            <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="43.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/flamant-rose-marche-gif-anime-oiseau.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="59.0" fitWidth="113.0" layoutX="682.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/unnamed%20(1).gif" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <HBox layoutX="43.0" layoutY="158.0" prefHeight="59.0" prefWidth="194.0" style="-fx-background-color: #e0e0d1;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Pane prefHeight="59.0" prefWidth="92.0" style="-fx-background-color: black;">
+               <children>
+                  <Text fill="#aeaeae" layoutX="26.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom " wrappingWidth="43.13669899106026">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#aeaeae" layoutX="9.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d'utilisateur">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="59.0" prefWidth="95.0">
+               <children>
+                  <Text fx:id="username" layoutX="29.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="43.13671875">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <ImageView fitHeight="95.0" fitWidth="235.0" layoutX="846.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cerf-gif.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="131.0" layoutX="360.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/produit-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="36.0" layoutX="256.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/unnamed.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="54.0" layoutX="239.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/silhouette-3088098_960_720.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="113.0" layoutX="1001.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/unnamed%20(1).gif" />
+         </image>
+      </ImageView>
+      <Pane layoutX="-2.0" prefHeight="114.0" prefWidth="1101.0">
+         <children>
+            <ImageView fitHeight="114.0" fitWidth="1107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/frontproduit.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="FormationsBtn" layoutX="614.0" layoutY="38.0" mnemonicParsing="false" onAction="#redirectionFormation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Formations" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BoutiqueBtn" layoutX="96.0" layoutY="38.0" mnemonicParsing="false" onAction="#redirectionBoutique" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="InformationsBtn" layoutX="774.0" layoutY="38.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Informations" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="EvenementsBtn" layoutX="447.0" layoutY="38.0" mnemonicParsing="false" onAction="#redirectionEvent" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Evénéments" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="EspecesBtn" layoutX="267.0" layoutY="38.0" mnemonicParsing="false" onAction="#redirectionEspece" opacity="0.8" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css" text="Espèces" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="panier" fitHeight="39.0" fitWidth="43.0" layoutX="913.0" layoutY="38.0" onMouseClicked="#panier" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/panier.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="logout" fitHeight="39.0" fitWidth="33.0" layoutX="973.0" layoutY="38.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/deconnexion.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

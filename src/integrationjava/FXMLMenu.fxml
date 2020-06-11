@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.FXMLMenuController">
+    <children>
+      <Pane fx:id="pane1" prefHeight="350.0" prefWidth="1024.0" />
+      <Pane fx:id="pane2" prefHeight="350.0" prefWidth="1024.0" />
+      <Pane fx:id="pane3" prefHeight="350.0" prefWidth="1024.0" />
+      <Pane fx:id="pane4" prefHeight="350.0" prefWidth="1024.0" />
+      <Button fx:id="boutiqueBtn" layoutX="141.0" layoutY="393.0" mnemonicParsing="false" onAction="#boutique" prefHeight="60.0" prefWidth="170.0" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="especesBtn" layoutX="430.0" layoutY="393.0" mnemonicParsing="false" onAction="#especes" prefHeight="60.0" prefWidth="170.0" stylesheets="@main.css" text="Espéces" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="evenementsBtn" layoutX="706.0" layoutY="393.0" mnemonicParsing="false" onAction="#evenements" prefHeight="60.0" prefWidth="170.0" stylesheets="@main.css" text="Evenements" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="formateurBtn" layoutX="141.0" layoutY="488.0" mnemonicParsing="false" onAction="#formateur" prefHeight="60.0" prefWidth="170.0" stylesheets="@main.css" text="Formateur" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="formationsBtn" layoutX="430.0" layoutY="488.0" mnemonicParsing="false" onAction="#formations" prefHeight="60.0" prefWidth="170.0" stylesheets="@main.css" text="Formations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="informationsBtn" layoutX="706.0" layoutY="488.0" mnemonicParsing="false" onAction="#informations" prefHeight="60.0" prefWidth="170.0" stylesheets="@main.css" text="Informations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <ImageView fx:id="logout" fitHeight="47.0" fitWidth="45.0" layoutX="14.0" layoutY="539.0" onMouseClicked="#Déconnexion" pickOnBounds="true" preserveRatio="true">
+         <image>
+          <Image url="@../images/deconnexion.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

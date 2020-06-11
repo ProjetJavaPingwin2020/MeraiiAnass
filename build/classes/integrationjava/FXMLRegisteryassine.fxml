@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.FXMLRegisteryassineController">
+   <children>
+      <Pane layoutX="321.0" layoutY="45.0" prefHeight="487.0" prefWidth="415.0">
+         <children>
+            <Text layoutX="194.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" underline="true" wrappingWidth="159.13671875">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="btninsert" layoutX="154.0" layoutY="439.0" mnemonicParsing="false" onAction="#register" prefHeight="24.0" prefWidth="160.0" style="-fx-background-color: black; -fx-background-radius: 100PX; -fx-text-fill: white;" text="Sign up" />
+            <Text layoutX="177.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #606060;" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="username" layoutX="147.0" layoutY="93.0" prefHeight="27.0" prefWidth="176.0" promptText="username" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="password" layoutX="147.0" layoutY="131.0" prefHeight="27.0" prefWidth="176.0" promptText="password" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <ImageView fitHeight="22.0" fitWidth="40.0" layoutX="302.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pngwave%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="30.0" layoutX="307.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pngwave%20(2).png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="email" layoutX="145.0" layoutY="170.0" onKeyPressed="#verifmail" prefHeight="25.0" prefWidth="176.0" promptText="email" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <ImageView fitHeight="19.0" fitWidth="13.0" layoutX="305.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pngwave%20(4).png" />
+               </image>
+            </ImageView>
+            <ChoiceBox fx:id="roles" layoutX="145.0" layoutY="363.0" prefHeight="29.0" prefWidth="176.0" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="nom" layoutX="147.0" layoutY="205.0" onKeyPressed="#verifnom" prefHeight="25.0" prefWidth="176.0" promptText="nom" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="prenom" layoutX="145.0" layoutY="246.0" onKeyPressed="#verifprenom" prefHeight="25.0" prefWidth="176.0" promptText="prenom" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="adresse" layoutX="145.0" layoutY="285.0" prefHeight="25.0" prefWidth="176.0" promptText="adresse" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="tel" layoutX="147.0" layoutY="328.0" onKeyPressed="#veriftel" prefHeight="25.0" prefWidth="176.0" promptText="téléphone" style="-fx-background-color: transparent; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;" />
+            <Label fx:id="errormail" layoutX="147.0" layoutY="197.0" />
+            <Label fx:id="errornom" layoutX="147.0" layoutY="235.0" />
+            <Label fx:id="errorprenom" layoutX="147.0" layoutY="273.0" />
+            <Label fx:id="errortelephone" layoutX="147.0" layoutY="355.0" />
+         </children>
+      </Pane>
+      <Text fill="#7c7c7c" layoutX="42.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="227.13671875">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="74.0" fitWidth="78.0" layoutX="115.0" layoutY="26.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/89912402_196432678447430_3322953782450454528_n.png" />
+         </image>
+      </ImageView>
+      <Text fill="#7c7c7c" layoutX="86.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register with PING WIN" wrappingWidth="159.13673043251038">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#7c7c7c" layoutX="26.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum." wrappingWidth="288.99999991059303" />
+      <JFXButton fx:id="btnregister" layoutX="95.0" layoutY="323.0" prefHeight="27.0" prefWidth="121.0" style="-fx-background-color: #7C7C7C; -fx-background-radius: 100PX;" text="Register" />
+      <Pane layoutX="-4.0" prefHeight="600.0" prefWidth="362.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="#7c7c7c" layoutX="76.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="159.13673043251038">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#7c7c7c" layoutX="48.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HuntKingdom®" wrappingWidth="227.13671875">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="56.0" fitWidth="62.0" layoutX="285.0" layoutY="44.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/89912402_196432678447430_3322953782450454528_n.png" />
+               </image>
+            </ImageView>
+            <Text fill="#7c7c7c" layoutX="97.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L'inscription est Gratuite !" wrappingWidth="160.0">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Text fill="#7c7c7c" layoutX="37.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L'équipe PingWin vous assure que vos informations ne seront publiées nulle part sans votre accord" wrappingWidth="288.99999991059303">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Text fill="#7c7c7c" layoutX="37.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notre application vise à implémenter un espace pour les passionés des domaines pêche et Chasse. " wrappingWidth="288.99999991059303">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Text fill="#7c7c7c" layoutX="73.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inscrivez-vous à HuntKingdom®" wrappingWidth="289.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#7c7c7c" layoutX="113.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue" wrappingWidth="227.13671875">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

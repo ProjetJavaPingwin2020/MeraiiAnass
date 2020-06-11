@@ -25,8 +25,13 @@ public class FosUser {
       private String confirmation_token ;
       private Date password_requested_at ;
       private String roles ;
+      private String nom ;
+      private String prenom ;
+      private String adresse ;
+      private String telephone ;
+   
 
-    public FosUser(int id, String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, Date last_login, String confirmation_token, Date password_requested_at, String roles) {
+    public FosUser(int id, String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, Date last_login, String confirmation_token, Date password_requested_at, String roles, String nom, String prenom, String adresse, String telephone) {
         this.id = id;
         this.username = username;
         this.username_canonical = username_canonical;
@@ -39,8 +44,41 @@ public class FosUser {
         this.confirmation_token = confirmation_token;
         this.password_requested_at = password_requested_at;
         this.roles = roles;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.telephone = telephone;
     }
-     
+     public FosUser(String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, Date last_login, String confirmation_token, Date password_requested_at, String roles, String nom, String prenom, String adresse, String telephone) {
+       
+        this.username = username;
+        this.username_canonical = username_canonical;
+        this.email = email;
+        this.email_canonical = email_canonical;
+        this.enabled = enabled;
+        this.salt = salt;
+        this.password = password;
+        this.last_login = last_login;
+        this.confirmation_token = confirmation_token;
+        this.password_requested_at = password_requested_at;
+        this.roles = roles;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.telephone = telephone;
+    }
+
+    public FosUser(int id, String username, String email, String password, String nom, String prenom, String adresse, String telephone) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.telephone = telephone;
+    }
+      
 
     public FosUser(int id, String username, String username_canonical, String email, String email_canonical, int enabled, String salt, String password, Date last_login, String confirmation_token, Date password_requested_at, String roles, String nom, String prenom) {
         this.id = id;
@@ -57,6 +95,18 @@ public class FosUser {
         this.roles = roles;
        
     }
+
+    public FosUser(String username, String email, String password, String roles, String nom, String prenom, String adresse, String telephone) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.telephone = telephone;
+    }
+    
 
     public FosUser(String username, String email, String password, String roles) {
         this.username = username;
@@ -79,6 +129,14 @@ public class FosUser {
         
     }
 
+    public FosUser(int id, String username, String email) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+    }
+    
+
+    
     public int getId() {
         return id;
     }
@@ -175,6 +233,38 @@ public class FosUser {
         this.roles = roles;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
    
 
     
@@ -207,8 +297,11 @@ public class FosUser {
 
     @Override
     public String toString() {
-        return "FosUser{" + "id=" + id + ", username=" + username + ", username_canonical=" + username_canonical + ", email=" + email + ", email_canonical=" + email_canonical + ", enabled=" + enabled + ", salt=" + salt + ", password=" + password + ", last_login=" + last_login + ", confirmation_token=" + confirmation_token + ", password_requested_at=" + password_requested_at + ", roles=" + roles + '}';
+        return "FosUser{" + "id=" + id + ", username=" + username + ", username_canonical=" + username_canonical + ", email=" + email + ", email_canonical=" + email_canonical + ", enabled=" + enabled + ", salt=" + salt + ", password=" + password + ", last_login=" + last_login + ", confirmation_token=" + confirmation_token + ", password_requested_at=" + password_requested_at + ", roles=" + roles + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", telephone=" + telephone + '}';
     }
+
+    
+    
 
     
                 

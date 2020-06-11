@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.EvenementbackController">
+   <children>
+      <BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="parent" prefHeight="749.0" prefWidth="1026.0">
+                     <children>
+                        <ImageView fitHeight="454.0" fitWidth="513.0" layoutX="311.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/world-ecology-journey.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="283.0" layoutY="562.0" prefHeight="37.0" prefWidth="527.0" text="      Soyons tous ensemble !">
+                           <font>
+                              <Font name="System Bold" size="37.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Lhello" layoutX="579.0" layoutY="45.0" prefHeight="31.0" prefWidth="193.0" textFill="#82bf40">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Pane fx:id="pane11" prefHeight="146.0" prefWidth="1026.0" />
+                        <Pane fx:id="pane2" prefHeight="146.0" prefWidth="1026.0" />
+                        <Pane fx:id="pane3" prefHeight="146.0" prefWidth="1026.0" />
+                        <Pane fx:id="pane4" prefHeight="146.0" prefWidth="1026.0" />
+                        <Button fx:id="BoutiqueBtn" layoutX="73.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionBoutique" opacity="0.8" prefHeight="39.0" prefWidth="122.0" stylesheets="@main.css" text="Boutique" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="EspecesBtn" layoutX="244.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionespece" opacity="0.8" prefHeight="39.0" prefWidth="122.0" stylesheets="@main.css" text="Espèces" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="EvenementsBtn" layoutX="424.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionevent" opacity="0.8" prefHeight="39.0" prefWidth="122.0" stylesheets="@main.css" text="Evénéments" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="InformationsBtn" layoutX="751.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectioninfo" opacity="0.8" prefHeight="39.0" prefWidth="122.0" stylesheets="@main.css" text="Informations" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="FormationsBtn" layoutX="591.0" layoutY="59.0" mnemonicParsing="false" onAction="#redirectionFormation" opacity="0.8" prefHeight="39.0" prefWidth="122.0" stylesheets="@main.css" text="Formations" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="logout" fitHeight="39.0" fitWidth="33.0" layoutX="960.0" layoutY="59.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/deconnexion.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+               </children>
+            </VBox>
+         </center>
+         <effect>
+            <DropShadow />
+         </effect>
+      </BorderPane>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="304.0" prefHeight="54.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+         <children>
+            <Button mnemonicParsing="false" onAction="#button2" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="COG" />
+               </graphic>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Voir des statistiques" wrappingWidth="155.4404296875">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="241.0" prefHeight="54.0" prefWidth="239.0" style="-fx-background-color: #a8ae21;" stylesheets="@main.css">
+         <children>
+            <Button mnemonicParsing="false" onAction="#button3" prefHeight="77.0" prefWidth="34.0" style="-fx-background-color: #8cb02c; -fx-text-fill: white;" stylesheets="@../../../../../java/ProjetPidev/src/projetpidev/main.css">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="PLUS" />
+               </graphic>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-fill: white;" text="Gerer les demandes" wrappingWidth="155.4404296875">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

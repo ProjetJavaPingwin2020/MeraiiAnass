@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="integrationjava.FXMLEditCController">
+   <children>
+      <Text layoutX="154.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modification de la Catégorie :" wrappingWidth="189.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="nom_cat" layoutX="344.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="108.826171875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="114.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Catégorie:" wrappingWidth="138.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="114.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description Catégorie:" wrappingWidth="138.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nom" layoutX="294.0" layoutY="109.0" />
+      <TextField fx:id="description" layoutX="294.0" layoutY="174.0" />
+      <Text fx:id="id" layoutX="471.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Button fx:id="edit" layoutX="235.0" layoutY="247.0" mnemonicParsing="false" onAction="#edit" prefHeight="25.0" prefWidth="72.0" text="Modifier" />
+   </children>
+</AnchorPane>

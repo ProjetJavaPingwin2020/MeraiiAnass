@@ -16,7 +16,7 @@ public class ConnexionBase
 
     private static ConnexionBase instance;
 
-    private String url = "jdbc:mysql://localhost:3308/test1.1";
+    private final static String url = "jdbc:mysql://localhost:3308/test1.1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris";
     private String login = "root";
     private String mdp = "";
     private Connection cnx;
@@ -40,5 +40,6 @@ public class ConnexionBase
     public Connection getCnx() {
         return cnx;
     }
+   
 
 }
